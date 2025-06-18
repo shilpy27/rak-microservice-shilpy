@@ -13,7 +13,7 @@ spring:
         - id: fee-service
           uri: lb://fee-service
           predicates:
-            - Path=/receipts/**
+            - Path=/fees/**
 eureka:
   client:
     service-url:
