@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "e84067a8-810d-417d-a173-18cf7b8a9b4c",
+		"name": "Student Fee Microservices",
+		"description": "Postman collection to test student-service and fee-service microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45982533",
+		"_collection_link": "https://shilpy-7878155.postman.co/workspace/Shilpy's-Workspace~4664b233-b902-4573-814e-e19c45615a9a/collection/45982533-e84067a8-810d-417d-a173-18cf7b8a9b4c?action=share&source=collection_link&creator=45982533"
+	},
+	"item": [
+		{
+			"name": "Add Student",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"studentId\": \"S1003\",\n  \"studentName\": \"John Carl\",\n  \"grade\": \"10\",\n  \"mobileNumber\": \"2128887771\",\n  \"schoolName\": \"Skiply School of Excellence\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/students",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Student",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/students",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Collect Fee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"studentId\": \"S1003\",\n  \"amount\": 1000.00,\n  \"mode\": \"Credit Card\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/fees/collect",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fees",
+						"collect"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Receipts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/fees/receipts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fees",
+						"receipts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
